@@ -1,0 +1,23 @@
+name: Update GraphQL Schema
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: technote-space/get-diff-action@v4.0.1
+        with:
+          PATTERNS: schema.graphql
+
+      - name: dispatch update-graphql-schema
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          repository: ayumitamai97/cont-codegen-sandbox-client
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          event-type: update-graphql-schema
+        if: env.GIT_DIFF

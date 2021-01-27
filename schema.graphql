@@ -34,7 +34,7 @@ type Query {
   """
   User
   """
-  user(id: ID!): User
+  user(id: ID, name: String): User
 
   """
   List of users

@@ -1,8 +1,8 @@
-name: Update GraphQL Schema
+name: Dispatch GraphQL Schema Update
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
         with:
           PATTERNS: schema.graphql
 
-      - name: dispatch update-graphql-schema
+      - name: Dispatch update-graphql-schema
         uses: peter-evans/repository-dispatch@v1
         with:
           repository: ayumitamai97/cont-codegen-sandbox-client

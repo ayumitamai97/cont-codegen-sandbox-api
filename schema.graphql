@@ -30,6 +30,15 @@ type PageInfo {
   startCursor: String
 }
 
+"""
+Post
+"""
+type Post {
+  content: String
+  id: ID!
+  title: String
+}
+
 type Query {
   """
   User
@@ -68,6 +77,7 @@ User
 type User {
   id: ID!
   name: String
+  posts: [Post!]!
 }
 
 """

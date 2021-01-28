@@ -4,5 +4,6 @@ module Types
 
     field :id, ID, null: false
     field :name, String, null: true
+    field :posts, [PostType], null: false
   end
 end

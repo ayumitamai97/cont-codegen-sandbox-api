@@ -9,11 +9,24 @@ module Queries
       users = [
         {
           id: 1,
-          name: 'Alice'
+          name: 'Alice',
+          posts: []
         },
         {
           id: 2,
-          name: 'Bob'
+          name: 'Bob',
+          posts: [
+            {
+              id: 11,
+              title: 'About GraphQL',
+              content: 'Work in progress ...'
+            },
+            {
+              id: 12,
+              title: 'About Ruby',
+              content: 'Matz created Ruby'
+            }
+          ]
         },
       ]
 

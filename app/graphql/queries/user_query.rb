@@ -2,10 +2,9 @@ module Queries
   class UserQuery < Types::BaseQuery
     description 'User'
 
-    argument :id, ID, required: false
-    argument :name, String, required: false
+    argument :id, ID, required: true
 
-    def resolve(id: nil, name: nil)
+    def resolve(id:)
       # Dummy data
       users = [
         {
